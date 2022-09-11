@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import Header from './components/Header';
+import SectionAbout from './components/SectionAbout';
+import SectionBottom from './components/SectionBottom';
+import SectionFooter from './components/SectionFooter';
 
 function App() {
+  useEffect(() => {
+    document.title = "Landing Page Zeitplan"
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="container md:mx-auto h-full"
+    >
+      <Header />
+      <SectionAbout />
+      <SectionBottom />
+      <SectionFooter image="./img/logo.png" />
     </div>
   );
 }
